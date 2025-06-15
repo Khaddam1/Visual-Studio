@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Favorite Song</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 3em;
+        }
+
+        .video-container {
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #0000AA;
+            position: absolute;
+            top: 500px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Song 🎵</h1>
+
+    <div class="video-container">
+        <!-- Embedded YouTube video -->
+<iframe width="685" height="514" src="https://www.youtube.com/embed/_Jtpf8N5IDE" title="Queen - Who Wants To Live Forever (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+
+    <div class="box" id="animateBox"></div>
+
+    <script>
+        // JavaScript animation: move the box from left to right
+        const box = document.getElementById('animateBox');
+        let pos = 0;
+        const animate = () => {
+            if (pos >= window.innerWidth - 50) pos = 0;
+            pos += 2;
+            box.style.left = pos + 'px';
+            requestAnimationFrame(animate);
+        };
+        animate();
+    </script>
+</body>
+</html>
